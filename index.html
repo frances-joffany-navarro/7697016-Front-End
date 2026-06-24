@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Les Bonnes Pièces</title>
 		<link rel="stylesheet" href="styles.css">
-		<script type="module" src="pieces.js"></script>
+		<script type="module" src="pieces.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -14,8 +14,11 @@
 		<main>
 			<!-- Menu de recherche -->
 			<section class="filtres">
-				<h3>Filtres</h3>
-			</section>
+				<h3>Filtres</h3> 
+        <button class="btn-trier">Trier par prix décroissant</button>
+        <br>
+        <button class="btn-filter">Filtrer les piéces non abordables</button>
+      </section>
 
 			<!-- Fiches produits -->
 			<section class="fiches">
