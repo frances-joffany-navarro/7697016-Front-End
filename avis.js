@@ -89,9 +89,53 @@ export async function afficherGraphiqueAvis() {
   };
 
   // Rendu du graphique dans l'élément canvas
-  const graphiqueAvis = new Chart(
-    document.querySelector("#graphique-avis"),
-    config,
+  new Chart(document.querySelector("#graphique-avis"), config,);
+
+  const nb_availability = [0, 0];
+
+  const pieceJSON = window.localStorage.getItem("pieces");
+  const pieces = JSON.parse(pieceJSON);
+  for (let commentaire of avis) {
+    if (commentaire.pieceId !== null) {
+      //const piece = await fetch(`http://localhost:8081/pieces/${commentaire.pieceId}`).then(piece => piece.json());
+
+      const piece = pieces.find(p => p.id === commentaire.pieceId);
+      if (piece.disponibilite) {
+        nb_availability[1]++;
+      } else {
+        nb_availability[0]++;
+      }
+    }
+  }
+
+  const labels1 = ["les pièces disponibles", "les pièces non disponibles"]
+  const data1 = {
+    labels: labels1,
+    datasets: [{
+      label: 'Avis sur les pièces disponibles et non disponibles',
+      data: nb_availability.reverse(),
+      backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(255, 99, 132, 0.2)'],
+      borderColor: ['rgb(75, 192, 192)', 'rgb(255, 99, 132)'],
+      borderWidth: 1
+    }]
+  };
+
+  const config1 = {
+    type: 'bar',
+    data: data1,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    },
+  };
+
+  // Rendu du graphique dans l'élément canvas
+  new Chart(
+    document.querySelector("#graphique-avis-piece-availability"),
+    config1,
   );
 }
 
