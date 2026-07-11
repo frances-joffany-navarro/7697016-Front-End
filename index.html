@@ -1,51 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-  <meta charset="utf-8">
-  <title>Les Bonnes Pièces</title>
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="pieces.js" defer></script>
-  <script type="module" src="avis.js" defer></script>
-</head>
-
-<body>
-  <header>
-    <img src="images/logo-les-bonnes-pieces.png" alt="LOGO">
-    <h1>Les Bonnes Pièces</h1>
-  </header>
-  <main>
-    <!-- Menu de recherche -->
-    <section class="filtres">
-      <h3>Filtres</h3>
-      <button class="btn-trier-asc">Trier par prix croissant</button>
-      <br>
-      <button class="btn-filter-cher">Filtrer les pièces non abordables</button>
-      <br>
-      <button class="btn-trier-dec">Trier par prix décroissant</button>
-      <br>
-      <button class="btn-filter-avec-description">Filtrer les piéces avec description</button>
-      <br>
-      <input type="range" id="input-range" name="input-range" min="0" max="60" step="5">
-      <label for="input-range">Prix</label>
-
-      <input type="range" name="prix-max" id="prix-max" min="0" max="60" step="5">
-      <!-- code a ajouter -->
-      <h3>Ajouter un avis</h3>
-      <form class="formulaire-avis">
-        Identifiant de la pièce :<br>
-        <input type="number" name="piece-id"><br>
-        Nom d'utilisateur :<br>
-        <input type="text" name="utilisateur"><br>
-        Étoiles :<br>
-        <input type="number" name="nb-etoiles" min="1" max="5"><br>
-        Avis :<br>
-        <input type="text" name="commentaire"><br>
-        <button>Envoyer</button>
-      </form>
-      <h3>Données</h3>
-      <button class="btn-maj">Mettre à jour les pièces</button>
-    </section>
+	<head>
+		<meta charset="utf-8">
+		<title>Les Bonnes Pièces</title>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="pieces.js"></script>
+	</head>
+	<body>
+		<header>
+			<img src="images/logo-les-bonnes-pieces.png" alt="LOGO">
+			<h1>Les Bonnes Pièces</h1>
+		</header>
+		<main>
+			<!-- Menu de recherche -->
+			<section class="filtres">
+				<h3>Filtres</h3>
+			</section>
 
     <!-- Fiches produits -->
     <section class="fiches">
